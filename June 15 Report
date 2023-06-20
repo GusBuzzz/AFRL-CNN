@@ -1,3 +1,5 @@
+The model below is responsible for accurately classifying any input image as real or fake.
+
 The file named 'my_model.h5' currently has an accuracy of 0.8929 and a loss of 0.1422
 Original Model Architecture:
 
@@ -39,3 +41,35 @@ model.fit(train_images, train_labels, epochs=15, batch_size=32, validation_data=
 
 The code that is shown above is a Convolutional Neural Network that was trained using two-hundred real and synthetic images from an AFRL dataset.
 The model is responsible for accurately classifying any input image as real or fake.
+
+
+(06/15/2023) New dataset
+
+# Define the CNN model architecture
+model = Sequential()
+model.add(Conv2D(32, (3, 3), activation='relu', input_shape=(32, 32, 1)))
+model.add(MaxPooling2D((2, 2)))
+model.add(Conv2D(64, (3, 3), activation='relu'))
+model.add(MaxPooling2D((2, 2)))
+model.add(Conv2D(64, (3, 3), activation='relu'))
+model.add(Flatten())
+model.add(Dense(64, activation='relu'))
+model.add(Dense(2, activation='softmax'))  # 2 output classes (real or synthetic)
+
+# Compile the model
+model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
+
+# Train the model
+print("Training model")
+model.fit(train_images, train_labels, epochs=25, batch_size=32, validation_data=(val_images, val_labels))
+
+# Save model
+model.save("/Users/gustavorubio/Downloads/Python/AFRL CNN/LaCieModelSave/my_model_32x32.h5") 
+# Change the 'my_model.h5' to something different so that you do not override your models
+
+# Evaluate the model
+model.evaluate(test_images, test_labels)
+
+
+New images were given for both real and fake data, each USETHIS200 folder has the correct data. It has an evaluation of (loss: 0.1705 - accuracy: 0.9250)
+It also did pass the LaCie_Testing.py file
