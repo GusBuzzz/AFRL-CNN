@@ -1,0 +1,41 @@
+The file named 'my_model.h5' currently has an accuracy of 0.8929 and a loss of 0.1422
+Original Model Architecture:
+
+model = Sequential()
+model.add(Conv2D(32, (3, 3), activation='relu', input_shape=(32, 32, 1)))
+model.add(MaxPooling2D((2, 2)))
+model.add(Conv2D(64, (3, 3), activation='relu'))
+model.add(MaxPooling2D((2, 2)))
+model.add(Conv2D(64, (3, 3), activation='relu'))
+model.add(Flatten())
+model.add(Dense(64, activation='relu'))
+model.add(Dense(2, activation='softmax'))  # 2 output classes (real or synthetic)
+
+# Compile the model
+model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
+
+# Train the model
+print("Training model")
+model.fit(train_images, train_labels, epochs=15, batch_size=32, validation_data=(val_images, val_labels))
+
+New Model Architecture: (loss: 0.1422 - accuracy: 0.8929)
+
+model = Sequential()
+model.add(Conv2D(32, (3, 3), activation='relu', input_shape=(32, 32, 1)))
+model.add(MaxPooling2D((2, 2)))
+model.add(Conv2D(64, (3, 3), activation='relu'))
+model.add(MaxPooling2D((2, 2)))
+model.add(Conv2D(128, (3, 3), activation='relu'))
+model.add(Flatten())
+model.add(Dense(64, activation='relu'))
+model.add(Dense(2, activation='softmax'))  # 2 output classes (real or synthetic)
+
+# Compile the model
+model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
+
+# Train the model
+print("Training model")
+model.fit(train_images, train_labels, epochs=15, batch_size=32, validation_data=(val_images, val_labels))
+
+The code that is shown above is a Convolutional Neural Network that was trained using two-hundred real and synthetic images from an AFRL dataset.
+The model is responsible for accurately classifying any input image as real or fake.
