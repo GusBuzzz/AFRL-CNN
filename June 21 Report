@@ -2,6 +2,8 @@ The model bellow is responsible for accurately classifying real or synthetic ima
 
 Model's evaluation: loss: 0.6932 - binary_accuracy: 0.3750
 
+Model's saved file name: 'model_1920x1080.h5'
+
 Model's architecture:
 
 model = keras.Sequential([
