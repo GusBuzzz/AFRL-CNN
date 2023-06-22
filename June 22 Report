@@ -38,4 +38,4 @@ Batch size = 16
 
 Observations: Increasing the epochs to 15 and changing the learning rate to 0.001 resulted in a 17.5% accuracy increase.
 
-Ways to improve: change the architecture of the model.
+Ways to improve: change the architecture of the model and the dense size.
