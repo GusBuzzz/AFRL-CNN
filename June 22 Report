@@ -41,6 +41,6 @@ Observations: Increasing the epochs to 15 and changing the learning rate to 0.00
 Ways to improve: change the architecture of the model and the dense size.
 
 UPDATE:
-Retained the model since I realized that the data sets were miss labled.
+Retained the model since I realized that the data sets were miss labeled.
 
-The same model that is shown above now had a new accuracy of (loss: 0.6944 - binary_accuracy: 0.4500)
+The same model that is shown above now has a new accuracy of (loss: 0.6944 - binary_accuracy: 0.4500)
