@@ -1,0 +1,7 @@
+import tensorflow as tf
+print(tf.config.list_physical_devices('GPU'))
+'''
+from keras import backend as K
+
+print(K.tensorflow_backend._get_available_gpus())
+'''
