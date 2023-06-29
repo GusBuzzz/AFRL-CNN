@@ -1,0 +1,43 @@
+The model below is responsible for accurately classifying real and synthetic images
+
+Model's evaluation loss: 7.8092 - accuracy: 0.6250
+
+Model's saved file name: 'model2.1_1080x1080.h5'
+
+Model's architecture:
+
+model = keras.Sequential([
+    # Block One
+    # Batch Normalization layers help in stabilizing the training process, improves generalization, and accelerates convergence.
+    layers.Conv2D(filters=32, kernel_size=3, activation='relu', padding='same', input_shape=[1080, 1080, 3]),
+    #layers.BatchNormalization(),
+    layers.MaxPool2D(),
+
+    # Block Two
+    layers.Conv2D(filters=64, kernel_size=3, activation='relu', padding='same'),
+    #layers.BatchNormalization(),
+    layers.MaxPool2D(),
+
+    # Block Three
+    layers.Conv2D(filters=128, kernel_size=3, activation='relu', padding='same'),
+    layers.Conv2D(filters=128, kernel_size=3, activation='relu', padding='same'),
+    #layers.BatchNormalization(),
+    layers.MaxPool2D(),
+
+    # Head
+    # The size of the dense layer has been increased to 256 neurons, allowing for a more expressive and powerful representation
+    layers.Flatten(),
+    layers.Dense(128, activation='relu'),
+    #layers.BatchNormalization(),
+    layers.Dropout(0.5),
+    layers.Dense(1, activation='sigmoid'),
+])
+
+model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
+
+Epochs = 1
+Batch size = 16
+
+Observations: This model can only receive images of size 1080x1080 pixels which is only considering 56.2% of the 1920x1080 original image area.
+This is because I was having computational issues the computer that I was using to train this model did not have enough memory to comput this model.
+This model took nearly 3 hours to process all 400 images.
