@@ -38,6 +38,6 @@ model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy']
 Epochs = 1
 Batch size = 16
 
-Observations: This model can only receive images of size 1080x1080 pixels which is only considering 56.2% of the 1920x1080 original image area.
-This is because I was having computational issues the computer that I was using to train this model did not have enough memory to comput this model.
+Observations: This model can only receive images of size 1080x1080 pixels which are only considering 56.2% of the original 1920x1080  image area.
+This is because I was having computational issues the computer that I was using to train this model did not have enough memory to compute this model.
 This model took nearly 3 hours to process all 400 images.
