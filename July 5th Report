@@ -1,0 +1,40 @@
+The model below is responsible for accurately classifying real and synthetic images
+
+Model's evaluation loss: 0.0096 - accuracy: 0.9937
+
+Model's saved file name: 'model2.1_1920x1080.h5'
+
+Model's architecture:
+
+model = keras.Sequential([
+    # Block One
+    # Batch Normalization layers help in stabilizing the training process, improves generalization, and accelerates convergence.
+    layers.Conv2D(filters=32, kernel_size=3, activation='relu', padding='same', input_shape=[1080, 1920, 3]),
+    #layers.BatchNormalization(),
+    layers.MaxPool2D(),
+
+    # Block Two
+    layers.Conv2D(filters=64, kernel_size=3, activation='relu', padding='same'),
+    #layers.BatchNormalization(),
+    layers.MaxPool2D(),
+
+    # Block Three
+    layers.Conv2D(filters=128, kernel_size=3, activation='relu', padding='same'),
+    #layers.BatchNormalization(),
+    layers.MaxPool2D(),
+
+    # Head
+    # The size of the dense layer has been increased to 256 neurons, allowing for a more expressive and powerful representation
+    layers.Flatten(),
+    layers.Dense(64, activation='relu'),
+    #layers.BatchNormalization(),
+    layers.Dropout(0.5),
+    layers.Dense(1, activation='sigmoid'),
+])
+
+model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
+
+Epochs = 3
+Batch size = 16
+
+Observations:
