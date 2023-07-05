@@ -37,4 +37,7 @@ model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy']
 Epochs = 3
 Batch size = 16
 
-Observations:
+Observations: This model has been trained using a dataset consisting of 200 real images and 200 synthetic images, resulting in an 
+impressive accuracy rate of 99.37%. Each image in the dataset has a resolution of 1920x1080 pixels. The training process took 
+approximately 2 hours to complete. After evaluating the model using the test images and their corresponding labels, it demonstrated 
+outstanding performance by correctly classifying all the images, achieving a perfect test accuracy of 100%.
