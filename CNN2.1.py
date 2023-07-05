@@ -1,13 +1,11 @@
 import os
 import cv2
 import numpy as np
-import matplotlib.pyplot as plts
 import tensorflow as tf
 import tensorflow.keras as keras
 import tensorflow.keras.layers as layers
-
-# Set the CUDA visible devices to use a specific GPU
-os.environ["CUDA_VISIBLE_DEVICES"] = "0"  # Replace '0' with the index of the desired GPU
+# Set TensorFlow to use CPU only
+os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 
 # Function to load and preprocess images from a folder
 def load_images_from_folder(folder, label):
@@ -24,8 +22,8 @@ def load_images_from_folder(folder, label):
     return images, labels
 
 # Define the paths to your real and synthetic image folders
-real_folder = "C:\\Users\\redForce 1\\Downloads\\AFRL\\AFRL Data\\AFRL Data\\Real200"
-synthetic_folder = "C:\\Users\\redForce 1\\Downloads\\AFRL\\AFRL Data\\AFRL Data\\Fake200"
+real_folder = r"C:\Users\user1\Downloads\AFRL\AFRL Data\AFRL Data\Real200"
+synthetic_folder = r"C:\Users\user1\Downloads\AFRL\AFRL Data\AFRL Data\Fake200"
 
 # Load and preprocess real images
 print("Preprocessing real images and labels")
@@ -98,14 +96,13 @@ model = keras.Sequential([
 
     # Block Three
     layers.Conv2D(filters=128, kernel_size=3, activation='relu', padding='same'),
-    layers.Conv2D(filters=128, kernel_size=3, activation='relu', padding='same'),
     #layers.BatchNormalization(),
     layers.MaxPool2D(),
 
     # Head
     # The size of the dense layer has been increased to 256 neurons, allowing for a more expressive and powerful representation
     layers.Flatten(),
-    layers.Dense(256, activation='relu'),
+    layers.Dense(64, activation='relu'),
     #layers.BatchNormalization(),
     layers.Dropout(0.5),
     layers.Dense(1, activation='sigmoid'),
@@ -118,11 +115,11 @@ model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy']
 
 # Train the model
 print('Training the model')
-model.fit(train_images, train_labels, epochs=1, batch_size=16, validation_data=(val_images, val_labels))
+model.fit(train_images, train_labels, epochs=3, batch_size=16, validation_data=(val_images, val_labels))
 print('Done')
 
 # Save the trained model
-model.save("C:\\Users\\redForce 1\\Downloads\\AFRL\\Models\\model2.1_1920x1080.h5")
+model.save(r"C:\Users\user1\Downloads\AFRL\Models\model2.1_1920x1080.h5")
 print("Model saved.")
 
 # Evaluate the model
