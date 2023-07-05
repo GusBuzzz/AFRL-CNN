@@ -4,6 +4,8 @@ Model's evaluation loss: 0.0096 - accuracy: 0.9937
 
 Model's saved file name: 'model2.1_1920x1080.h5'
 
+Model's code file name: CNN2.1.py
+
 Model's architecture:
 
 model = keras.Sequential([
