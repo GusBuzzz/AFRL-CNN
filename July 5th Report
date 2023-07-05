@@ -43,3 +43,20 @@ Observations: This model has been trained using a dataset consisting of 200 real
 impressive accuracy rate of 99.37%. Each image in the dataset has a resolution of 1920x1080 pixels. The training process took 
 approximately 2 hours to complete. After evaluating the model using the test images and their corresponding labels, it demonstrated 
 outstanding performance by correctly classifying all the images, achieving a perfect test accuracy of 100%.
+
+* I created a test file called CNN2_Testing.py. Within this file, I implemented a method that selects each image from a folder and 
+stores the results of the model in an array. To evaluate the accuracy of the results, I divided the total number of elements in the 
+array by 50. The dataset consisted of 50 real images and 50 synthetic images, represented by the labels 0 and 1 respectively. 
+Since the total number of outputs in the array should be 50, dividing by 50 allows us to obtain the accuracy. 
+The model's results are presented below:
+
+Result array: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 
+0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 
+1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 
+1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+
+Test accuracy: [[1.]]
+
+Folder length:  100
+
+
