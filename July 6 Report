@@ -1,1 +1,12 @@
+Below are the CSV file names, which represent the output results of the "model2.1_1920_1080.h5" file. 
+Each file name provides valuable information about the data received and the observations made by the model.
 
+During the testing phase, the model processed an input folder containing a mix of real and synthetic images. 
+Its task was to separate these images into two distinct folders. Real images were placed in the "real" folder, 
+while synthetic images were assigned to the "synthetic" folder. This classification process was repeated for 
+each image in the input folder until all images were classified.
+
+Upon completion of the execution, the model not only sorted the input images into their respective predicted folders
+but also generated a CSV file. This file contains the image names along with the labels assigned by the model.
+
+For further details regarding the data and outputs, please refer to the following bulleted points.
