@@ -1,0 +1,7 @@
+Today, I worked on detectron2 object detection models by following Van Vung's book, "Hands-on Computer Vision with Detectron2." My task was to study Chapter 3, 
+which focused on properly converting a CSV file to a JSON file and how they can be applied for detectron2. To gain a better understanding, I also revisited Chapters 
+1 and 2, as they provided crucial context referenced in Chapter 3. While skimming through the initial chapters, I familiarized myself with detectron2's concepts before 
+diving into Chapter 3. Handling JSON files was a new experience for me since I never had previous experience in using these files, so I took some time to grasp their 
+structure and the specific guidelines to follow. Due to the unavailability of the WASABI dataset at the moment, I couldn't proceed with training an object detection model 
+using detectron2. However, I have a Python script suitable for training purposes. From my research, it seems that training the model purely based on a JSON file might not 
+be sufficient. Additional files are likely required to complement the JSON files during the training process, as suggested by the references I came across.
